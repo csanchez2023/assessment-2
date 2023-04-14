@@ -46,7 +46,7 @@ getSchedule(name, shift){
 */
 
 //CODE HERE
-let empOne = new Employee("Justin", "weekday nights");
+let empOne = new Employee("Justin", "week nights");
 
 
 /*

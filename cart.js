@@ -34,6 +34,8 @@ const cart = [
 ]
 
 //CODE HERE
+const summedPrice = cart.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0);
+console.log(summedPrice);
 
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
@@ -54,6 +56,14 @@ const cart = [
 */
 
 //CODE HERE
+
+function calcFinalPrice(cartTotal, couponValue, tax){
+    let taxTotal = tax * cartTotal;
+    let total = taxTotal + cartTotal;
+
+    return total - couponValue;
+}
+console.log(calcFinalPrice(100.00, 25.00, .06))
 
 
 
@@ -78,7 +88,11 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    My customer properties would be groupSize, splitCheck, table, booth
+    Groupsize would be a Number
+    SplitCheck would be a boolean
+    table would be a boolean
+    booth would be a boolean
 
 */
 
@@ -87,4 +101,18 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+    groupSize: Number,
+    SplitCheck: Boolean,
+    table: Boolean,
+    booth: Boolean
+}
+
+function customer2(a,b,c,d){
+    this.groupSize = a;
+    this.splitCheck = b;
+    this.table = c;
+    this.booth = d;
+}
+
+let Craig = new customer2(4, true, true, false)
