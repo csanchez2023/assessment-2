@@ -37,8 +37,8 @@ const pizza = {
     price: 15,
     category: "Most Popular",
     popularity: 1,
-    rating: 10
-    tags: []
+    rating: 10,
+    tags: ["kids", "seinor", "gluten-free"]
 }
 
 
@@ -52,6 +52,7 @@ const pizza = {
 */
 
 //CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -62,7 +63,7 @@ const pizza = {
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -73,6 +74,12 @@ const pizza = {
 
 //CODE HERE
 
+function newePrice(price){
+    console.log(`The new price is now ${price} for a limited time!!!`);
+
+}
+
+newePrice(10.99)
 
 /*
     Fourth, and last, destructure the category
@@ -82,8 +89,12 @@ const pizza = {
 */
 
 //CODE HERE
+function category2(category){
+    console.log(`The peperioni pizza is ${category} for the past two months!!!!`)
+}
 
 
+category2(pizza.category)
 //////////////////PROBLEM 3////////////////////
 /* 
     Create an array with about 5 objects in it.
