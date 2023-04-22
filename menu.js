@@ -109,6 +109,47 @@ category2(pizza.category)
 
 //CODE HERE
 
+const foodArr = [{
+    name: "pepperoni and olive",
+    price: 15,
+    category: "Most Popular",
+    popularity: 1,
+    rating: 10,
+    tags:  "medium", 
+},
+{
+    name: "ham and pineapple",
+    price: 12.99,
+    category: "hawaiian",
+    popularity: 2,
+    rating: 9,
+    tags: "large"
+},
+{
+    name: "bbq chicken",
+    price: 19,
+    category: "specialty",
+    popularity: 3,
+    rating: 7,
+    tags: "medium"
+},
+{
+    name: "three meats",
+    price: 18,
+    category: "Meat only",
+    popularity: 4,
+    rating: 8,
+    tags:  "small"
+},
+{
+    name: "the cowboy",
+    price: 22,
+    category: "deep dish",
+    popularity: 5,
+    rating: 10,
+    tags: "small"
+}];
+
 
 
 //////////////////PROBLEM 4////////////////////
@@ -125,9 +166,8 @@ category2(pizza.category)
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
-
+ const filteredFood = foodArr.filter(pizza => pizza.tags === "medium");
+//  console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -170,6 +210,36 @@ category2(pizza.category)
 
 //CODE HERE
 
+function filterByProperty(property, number, type){
+    let arr = foodArr;
+    let filteredArray = [];
+
+    
+        if(property === 'rating'){
+            if(type === 'above'){
+                filteredArray = arr.filter(item => item.rating > number);  
+            }else if(type === "below"){
+                filteredArray = arr.filter(item => item.rating < number);
+            }
+        } else if(property === 'popularity'){
+            if(type === 'above'){
+                filteredArray = arr.filter(item => item.popularity > number); 
+            }else if(type === "below"){
+                filteredArray = arr.filter(item => item.popularity < number);
+            }
+        } else if( property === 'price'){
+            if(type === 'above'){
+                filteredArray = arr.filter(item => item.price > number);   
+            }else if(type === "below"){
+                filteredArray = arr.filter(item => item.price < number);
+            }
+        }  
+    return filteredArray;   
+}
+
+
+
+
 
 /*
     Invoke the `filterByProperty` function passing
@@ -179,3 +249,4 @@ category2(pizza.category)
 */
 
 //CODE HERE
+console.log(filterByProperty('price', 7, 'below'));
